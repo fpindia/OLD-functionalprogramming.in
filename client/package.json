@@ -1,5 +1,5 @@
 {
-  "name": "react-ui",
+  "name": "client",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -8,8 +8,9 @@
     "react-scripts": "^2.1.8"
   },
   "scripts": {
+    "build:ps": "spago build && ln -sf ../output node_modules/output",
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "npm run build:ps && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -22,5 +23,9 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "proxy": "http://localhost:5000"
+  "proxy": "http://localhost:5000",
+  "devDependencies": {
+    "purescript": "^0.13.6",
+    "spago": "^0.13.1"
+  }
 }

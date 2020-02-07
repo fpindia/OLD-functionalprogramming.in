@@ -10,3 +10,18 @@ npm-debug.log
 # Docker
 Dockerfile
 docker-compose.yml
+
+# Purescript
+bower_components/
+tmp/
+output/
+html/index.js
+/.psc-package
+/.cache
+/dist
+/.psci_modules
+/.spago
+/package-lock.json
+.spago
+.cache
+dist

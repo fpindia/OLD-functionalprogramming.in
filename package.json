@@ -1,31 +1,44 @@
 {
-  "name": "heroku-cra-node",
-  "version": "3.0.0",
-  "description": "How to use create-react-app with a custom Node API on Heroku",
+  "name": "functionalprogramming.in",
+  "version": "0.1.0",
+  "description": "Code for functionalprogramming.in",
   "engines": {
     "node": "10.x"
   },
   "scripts": {
-    "start": "node server",
-    "build": "cd react-ui/ && npm install && npm run build"
+    "start": "echo $PORT && node index.js",
+    "build": "npm-run-all --serial build:**",
+    "build:server": "spago bundle-app",
+    "start:server": "npm run bundle:server && npm start",
+    "build:client": "cd client && rm node_modules/output && npm install && npm run build",
+    "start:client": "cd client && npm start",
+    "dev": "npm run build && npm-run-all --parallel start:**"
   },
   "cacheDirectories": [
     "node_modules",
-    "react-ui/node_modules"
+    "client/node_modules"
   ],
   "dependencies": {
     "express": "^4.16.4"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mars/heroku-cra-node.git"
+    "url": "https://github.com/fpindia/functionalprogramming.in.git"
   },
   "keywords": [
+    "functional programming",
+    "fpindia",
+    "purescript",
+    "javascript",
     "node",
     "heroku",
     "create-react-app",
     "react"
   ],
   "license": "MIT",
-  "devDependencies": {}
+  "devDependencies": {
+    "npm-run-all": "^4.1.5",
+    "purescript": "^0.13.6",
+    "spago": "^0.13.1"
+  }
 }
